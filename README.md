@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
   
   ![GitHub repo size](https://img.shields.io/github/repo-size/geeky-prashant/responsive-gym-website)
@@ -47,3 +48,6 @@ If you want to contact me you can reach me at [Twitter](https://www.twitter.com/
 ### License
 
 This project is **free to use** and does not contains any license.
+=======
+# Dynamic_GYM
+>>>>>>> 586ee8457f6e8b53aa770766e5d9289b94db96d6
