@@ -15,10 +15,20 @@ The Dynamic Gym Website is a front-end application developed for a Human-Compute
 - HTML
 - CSS
 - JavaScript
-- [Any frameworks/libraries used, e.g., Bootstrap, jQuery]
 
-## Installation
+## Live Demo
 
-1. Clone the repository:
-   ```bash
-   git clone [repository-url]
+You can access the live version of the project dynamicgym-jade.vercel.app
+
+## Usage
+
+- Navigate through the website to explore available services.
+- Check class schedules and membership details.
+
+## Contribution
+
+If you would like to contribute to this project, please fork the repository and create a pull request.
+
+## License
+
+This project is licensed under the MIT License.
