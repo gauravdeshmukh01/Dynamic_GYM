@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url(images/bg.jpg); /* Use the same background image */
+            background-size: cover;
+            color: #fff; /* Text color for better visibility */
+            font-family: "Poppins", sans-serif; /* Use the same font */
+            padding: 50px; /* Padding for better layout */
+        }
+        .registration-form {
+            background: rgba(23, 24, 25, 0.8); /* Semi-transparent background for form */
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: auto;
+        }
+        .registration-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .registration-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .registration-form input, .registration-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #fff; /* White border */
+            border-radius: 5px;
+        }
+        .payment-options {
+            display: flex;
+            justify-content: space-between;
+        }
+        .payment-options input {
+            margin-right: 10px; /* Space between payment options */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #f13a11;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none; /* Initially hide the button */
+        }
+        button:hover {
+            background-color: #ff5733; /* Hover effect */
+        }
+        .qr-code {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .qr-code img {
+            max-width: 100%; /* Responsive QR code */
+            height: auto;
+            width: 150px; /* Set desired width for the QR code */
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-form">
+        <h2>Membership Registration</h2>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" required>
+
+            <h3>Payment Option (₹700/month)</h3>
+            <div class="payment">
+                <label>
+                    <input type="radio" name="payment" value="googlepay" required> Google Pay
+                </label>
+            </div>
+        </form>
+
+        <!-- QR Code Section -->
+        <div class="qr-code" id="qrCode" style="display: none;">
+            <h3>Scan QR Code for Payment</h3>
+            <img src="images/image.png.png" alt="QR Code">
+        </div>
+
+        <!-- Register Button (Initially hidden) -->
+        <button id="registerButton">Register</button>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            // Prevent default form submission
+            event.preventDefault();
+
+            // Get age and weight
+            const age = document.getElementById('age').value;
+            const weight = document.getElementById('weight').value;
+
+            // Validation for negative age and weight
+            if (age < 0 || weight < 0) {
+                alert('Age and weight cannot be negative.');
+                return; // Stop form submission
+            }
+
+            // Show QR code section upon successful validation
+            document.getElementById('qrCode').style.display = 'block';
+
+            // Show the Register button after displaying the QR code
+            document.getElementById('registerButton').style.display = 'block';
+        });
+
+        // Show QR code when Google Pay is selected
+        document.querySelector('input[name="payment"]').addEventListener('change', function() {
+            if (this.checked && this.value === 'googlepay') {
+                document.getElementById('qrCode').style.display = 'block'; // Show QR code
+                document.getElementById('registerButton').style.display = 'block'; // Show Register button
+            }
+        });
+
+        // Handle Register button click
+        document.getElementById('registerButton').addEventListener('click', function() {
+            alert('Congratulations! You became a member of Dynamic Gym!');
+        });
+    </script>
+</body>
+</html>
