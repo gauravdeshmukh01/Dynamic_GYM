@@ -18,7 +18,7 @@ The Dynamic Gym Website is a front-end application developed for a Human-Compute
 
 ## Live Demo
 
-You can access the live version of the project dynamicgym-jade.vercel.app
+You can access the live version of the project [dynamicgym-jade.vercel.app](https://dynamicgym-jade.vercel.app/)
 
 ## Usage
 
